@@ -4,132 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сайт Полянки</title>
-</head>
-<body id="body">
-
     <style>
-                .header{
-            width: 100%;
-            height: 20%;
-            position: fixed;
-            margin-top: -40px;
-        }
         * {
-            margin: 0px;
-            padding: 0px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
-            background-color: #f55791;;
+            background-color: #f55791;
             font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            background-color: #f55791;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
         }
         
         nav li {
-            list-style: none;
-            display: inline-block;
-            width: 110px;
-            height: 35px;
-            padding-top: 15px;
-            margin-right: -5px;
-            text-align: center;
+            width: 20%;
+            min-width: 120px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-color: #e5068c;
+            border-right: 1px solid #be0f8c;
         }
         
-        a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        nav li:hover {
-            background-color: #be0f8c;
-        }
-        
-        nav {
-            background-color: #f55791;
+        nav li:last-child {
+            border-right: none;
         }
         
         .led {
             background-color: #da3d71;
         }
         
-        .first {
-            float: left;
-            text-align: justify;
-            width: 20%;
-            margin: 20px;
-            background-color: #f55791;
-            padding: 15px;
-            border-radius: 8px;
-            color: white
-        }
-        
-        .second {
-            width: 20%;
-            float: right;
-            text-align: justify;
-            margin: 20px;
-            background-color: #f55791;
-            padding: 15px;
-            border-radius: 8px;
+        a {
             color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            padding: 15px 0;
         }
         
-        article {
+        nav li:hover {
+            background-color: #be0f8c;
+        }
+        
+        /* Main Content */
+        #main {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: rgb(209, 117, 146);
+            margin-top: 50px;
+            min-height: calc(100vh - 450px);
+        }
+        
+        .first, .second {
+            flex: 1 1 300px;
             text-align: justify;
-            width: 60%;
-            margin-top: 20px;
+            margin: 20px;
             background-color: #f55791;
             padding: 20px;
             border-radius: 8px;
-            color: white;   
-            overflow: hidden;
+            color: white;
+            min-width: 300px;
         }
         
-        #main {
-            display: flex;
-            background-color: rgb(209, 117, 146);
-            height: 200%;
-            margin-top: 40px;
+        article {
+            flex: 2 1 600px;
+            text-align: justify;
+            margin: 20px;
+            background-color: #f55791;
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            min-width: 300px;
         }
         
+        /* Images */
         img {
             margin-top: 20px;
             border-radius: 8px;
+            display: block;
         }
         
         .img_1 {
             width: 100%;
-            height: 50ch;
+            height: 400px;
             object-fit: cover;
         }
         
-        .img_2 {
+        .img_2, .img_3 {
             width: 100%;
+            height: 300px;
             object-fit: cover;
         }
         
         .img_3 {
-            width: 100%;
             transform: scale(-1, 1);
+        }
+        
+        .img_4, .img_5 {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
             object-fit: cover;
+            margin-bottom: 20px;
         }
         
-        .img_4 {
-              max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 20px;
-        }
-        
-        .img_5 {
-              max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 20px;
-        }
-        
+        /* Typography */
         h1, h2, h3 {
             color: white;
+            margin-bottom: 15px;
         }
         
         h3 {
@@ -137,58 +138,179 @@
         }
         
         .h {
-            margin-top: 20px;
+            margin-top: 30px;
         }
         
         p {
-            margin-top: 20px;
-            line-height: 1.6;
+            margin-top: 15px;
         }
         
-#footer {
-    margin-top: 40px;
-    width: 100%;
-    height: auto; 
-    text-align: center;
-    background-color: rgb(209, 117, 146);
-    display: block;
-    clear: both;
-    padding: 20px 0; 
-    box-sizing: border-box; 
-}
-
-footer ul {
-    width: 100%;
-    display: flex; 
-    justify-content: space-between; 
-    padding: 0 20px; 
-    box-sizing: border-box;
-}
-
-footer li {
-    list-style: none;
-    background-color: #f55791;
-    display: block; 
-    width: 23%; 
-    height: 300px;
-    padding: 15px; 
-    border-radius: 8px;
-    color: white;
-    box-sizing: border-box; 
-    margin: 0; 
-}
-
-cite {
-    color: white;
-    margin: 40px 0; 
-    padding: 20px;
-    display: block;
-}
-
-footer p {
-    margin-top: 40px;
-}
+        /* Footer */
+        #footer {
+            margin-top: 40px;
+            width: 100%;
+            text-align: center;
+            background-color: rgb(209, 117, 146);
+            padding: 20px 0;
+        }
+        
+        footer ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 20px;
+            gap: 15px;
+        }
+        
+        footer li {
+            list-style: none;
+            background-color: #f55791;
+            flex: 1 1 250px;
+            min-width: 250px;
+            height: 300px;
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        footer li h1 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        
+        cite {
+            color: white;
+            margin: 40px 0;
+            padding: 20px;
+            display: block;
+        }
+        
+        footer p {
+            margin-top: 40px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1200px) {
+            .first, .second {
+                flex: 1 1 250px;
+                min-width: 250px;
+            }
+            
+            article {
+                flex: 2 1 500px;
+            }
+            
+            footer li {
+                flex: 1 1 200px;
+                min-width: 200px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #main {
+                flex-direction: column;
+            }
+            
+            .first, .second, article {
+                flex: 1 1 100%;
+                min-width: 100%;
+                margin: 10px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                width: 100%;
+                height: 45px;
+            }
+            
+            .header {
+                position: relative;
+            }
+            
+            #main {
+                margin-top: 0;
+            }
+            
+            .img_1 {
+                height: 300px;
+            }
+            
+            .img_2, .img_3 {
+                height: 250px;
+            }
+            
+            footer ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            footer li {
+                width: 100%;
+                max-width: 400px;
+                height: auto;
+                min-height: 250px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .first, .second, article {
+                margin: 5px;
+                padding: 15px;
+            }
+            
+            nav li {
+                height: 40px;
+            }
+            
+            a {
+                padding: 10px 0;
+                font-size: 0.9em;
+            }
+            
+            .img_1 {
+                height: 250px;
+            }
+            
+            .img_2, .img_3 {
+                height: 200px;
+            }
+            
+            footer li {
+                padding: 15px;
+                min-height: 200px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+        
+        /* Additional improvements for very small screens */
+        @media (max-width: 360px) {
+            body {
+                font-size: 14px;
+            }
+            
+            .first, .second, article {
+                padding: 10px;
+            }
+            
+            footer li {
+                min-width: 100%;
+            }
+        }
     </style>
+</head>
+<body id="body">
     <header class="header">
         <nav>
             <ul>
@@ -200,6 +322,7 @@ footer p {
             </ul>
         </nav>
     </header>
+    
     <main id="main">
         <sidebar class="first">
             <h2>Интересные факты</h2>
@@ -219,6 +342,7 @@ footer p {
                 Айпад для неё - не просто устройство, а верный спутник и инструмент самовыражения.
             </p>
         </sidebar>
+        
         <article>
             <h1>Мир Полянки</h1>
             <p>
@@ -242,6 +366,7 @@ footer p {
             <img class="img_4" src="https://github.com/wgxnlf/polyana/blob/main/images/5192905401677513531.jpg?raw=true" alt="Уютная комната">
             <img class="img_5" src="https://github.com/wgxnlf/polyana/blob/main/images/5190595688524807561.jpg?raw=true" alt="Творчество">
         </article>
+        
         <sidebar class="second">
             <h2>Увлечения Полянки</h2>
             <p>
@@ -256,6 +381,7 @@ footer p {
             <img class="img_3" src="https://github.com/wgxnlf/polyana/blob/main/images/5226437998063777320.jpg?raw=true" alt="Котик">
         </sidebar>
     </main>
+    
     <footer id="footer">
         <ul>
             <li>
