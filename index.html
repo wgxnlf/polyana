@@ -2,43 +2,74 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Сайт Полянки</title>
     <style>
         * {
             margin: 0;
             padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
             box-sizing: border-box;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        
+        html, body {
+            width: 100% !important;
+            height: 100% !important;
+            overflow-x: hidden;
         }
         
         body {
             background-color: #f55791;
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
-        /* Header */
         .header {
             width: 100%;
             position: fixed;
             top: 0;
+            left: 0;
             z-index: 1000;
             background-color: #f55791;
+            -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         nav ul {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            list-style: none;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
             flex-wrap: wrap;
+            list-style: none;
+            width: 100%;
         }
         
         nav li {
-            width: 20%;
-            min-width: 120px;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            min-width: 20%;
             height: 50px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
             justify-content: center;
             background-color: #e5068c;
             border-right: 1px solid #be0f8c;
@@ -49,7 +80,7 @@
         }
         
         .led {
-            background-color: #da3d71;
+            background-color: #da3d71 !important;
         }
         
         a {
@@ -58,79 +89,91 @@
             font-weight: bold;
             text-align: center;
             width: 100%;
-            padding: 15px 0;
+            padding: 15px 5px;
+            display: block;
+            -webkit-tap-highlight-color: transparent;
         }
         
-        nav li:hover {
+        nav li:hover, nav li:active {
             background-color: #be0f8c;
         }
         
-        /* Main Content */
         #main {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
             flex-wrap: wrap;
             background-color: rgb(209, 117, 146);
             margin-top: 50px;
             min-height: calc(100vh - 450px);
+            width: 100%;
         }
         
-        .first, .second {
-            flex: 1 1 300px;
+        .first, .second, article {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
             text-align: justify;
-            margin: 20px;
+            margin: 15px;
             background-color: #f55791;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             color: white;
-            min-width: 300px;
+            min-width: 280px;
         }
         
         article {
-            flex: 2 1 600px;
-            text-align: justify;
-            margin: 20px;
-            background-color: #f55791;
-            padding: 20px;
-            border-radius: 8px;
-            color: white;
-            min-width: 300px;
+            -webkit-box-flex: 2;
+            -webkit-flex: 2;
+            -ms-flex: 2;
+            flex: 2;
         }
         
-        /* Images */
         img {
-            margin-top: 20px;
+            margin-top: 15px;
             border-radius: 8px;
             display: block;
+            max-width: 100%;
+            height: auto;
         }
         
         .img_1 {
             width: 100%;
-            height: 400px;
+            height: 300px;
+            -o-object-fit: cover;
             object-fit: cover;
         }
         
         .img_2, .img_3 {
             width: 100%;
-            height: 300px;
+            height: 250px;
+            -o-object-fit: cover;
             object-fit: cover;
         }
         
         .img_3 {
+            -webkit-transform: scale(-1, 1);
+            -ms-transform: scale(-1, 1);
             transform: scale(-1, 1);
         }
         
         .img_4, .img_5 {
             width: 100%;
             height: auto;
-            max-height: 400px;
+            max-height: 350px;
+            -o-object-fit: cover;
             object-fit: cover;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
-        /* Typography */
         h1, h2, h3 {
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            word-wrap: break-word;
         }
         
         h3 {
@@ -138,138 +181,107 @@
         }
         
         .h {
-            margin-top: 30px;
+            margin-top: 25px;
         }
         
         p {
-            margin-top: 15px;
+            margin-top: 12px;
+            word-wrap: break-word;
         }
         
-        /* Footer */
         #footer {
-            margin-top: 40px;
+            margin-top: 30px;
             width: 100%;
             text-align: center;
             background-color: rgb(209, 117, 146);
-            padding: 20px 0;
+            padding: 20px 10px;
+            clear: both;
         }
         
         footer ul {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
             flex-wrap: wrap;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
             justify-content: space-between;
-            padding: 0 20px;
-            gap: 15px;
+            padding: 0 10px;
+            gap: 12px;
+            list-style: none;
         }
         
         footer li {
-            list-style: none;
             background-color: #f55791;
-            flex: 1 1 250px;
-            min-width: 250px;
-            height: 300px;
-            padding: 20px;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            min-width: 240px;
+            padding: 15px;
             border-radius: 8px;
             color: white;
-            display: flex;
-            flex-direction: column;
+            display: block;
         }
         
         footer li h1 {
             font-size: 1.2em;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         cite {
             color: white;
-            margin: 40px 0;
-            padding: 20px;
+            margin: 30px 0;
+            padding: 15px;
             display: block;
         }
         
-        footer p {
-            margin-top: 40px;
-        }
-        
-        /* Mobile Responsive */
-        @media (max-width: 1200px) {
-            .first, .second {
-                flex: 1 1 250px;
-                min-width: 250px;
-            }
-            
-            article {
-                flex: 2 1 500px;
-            }
-            
-            footer li {
-                flex: 1 1 200px;
-                min-width: 200px;
-            }
-        }
-        
-        @media (max-width: 768px) {
+        @media screen and (max-width: 768px) {
             #main {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
                 flex-direction: column;
+                margin-top: 50px;
             }
             
             .first, .second, article {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1 1 100%;
+                -ms-flex: 1 1 100%;
                 flex: 1 1 100%;
                 min-width: 100%;
-                margin: 10px;
+                margin: 8px 10px;
+                padding: 12px;
             }
             
             nav ul {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
                 flex-direction: column;
             }
             
             nav li {
                 width: 100%;
-                height: 45px;
+                height: 44px;
+                border-right: none;
+                border-bottom: 1px solid #be0f8c;
+            }
+            
+            nav li:last-child {
+                border-bottom: none;
             }
             
             .header {
-                position: relative;
-            }
-            
-            #main {
-                margin-top: 0;
-            }
-            
-            .img_1 {
-                height: 300px;
-            }
-            
-            .img_2, .img_3 {
-                height: 250px;
-            }
-            
-            footer ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            footer li {
-                width: 100%;
-                max-width: 400px;
+                position: fixed;
                 height: auto;
-                min-height: 250px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .first, .second, article {
-                margin: 5px;
-                padding: 15px;
-            }
-            
-            nav li {
-                height: 40px;
-            }
-            
-            a {
-                padding: 10px 0;
-                font-size: 0.9em;
             }
             
             .img_1 {
@@ -280,38 +292,100 @@
                 height: 200px;
             }
             
+            footer ul {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+            
             footer li {
-                padding: 15px;
-                min-height: 200px;
-            }
-            
-            h1 {
-                font-size: 1.5em;
-            }
-            
-            h2 {
-                font-size: 1.3em;
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 12px;
             }
         }
         
-        /* Additional improvements for very small screens */
-        @media (max-width: 360px) {
+        @media screen and (max-width: 480px) {
             body {
                 font-size: 14px;
             }
             
             .first, .second, article {
+                margin: 5px 8px;
                 padding: 10px;
+            }
+            
+            nav li {
+                height: 42px;
+            }
+            
+            a {
+                padding: 12px 5px;
+                font-size: 0.9em;
+            }
+            
+            .img_1 {
+                height: 200px;
+            }
+            
+            .img_2, .img_3 {
+                height: 180px;
+            }
+            
+            footer li {
+                padding: 12px;
+            }
+            
+            h1 {
+                font-size: 1.4em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            #main {
+                margin-top: 42px;
+            }
+        }
+        
+        @media screen and (max-width: 360px) {
+            .header {
+                position: fixed;
+            }
+            
+            #main {
+                margin-top: 42px;
+            }
+            
+            .first, .second, article {
+                min-width: 100%;
+                margin: 5px;
+                padding: 8px;
             }
             
             footer li {
                 min-width: 100%;
+                padding: 10px;
             }
+        }
+        
+        .telegram-fix {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
         }
     </style>
 </head>
-<body id="body">
-    <header class="header">
+<body id="body" class="telegram-fix">
+    <header class="header telegram-fix">
         <nav>
             <ul>
                 <li class="led"><a href="#">Полянка</a></li>
@@ -323,8 +397,8 @@
         </nav>
     </header>
     
-    <main id="main">
-        <sidebar class="first">
+    <main id="main" class="telegram-fix">
+        <aside class="first telegram-fix">
             <h2>Интересные факты</h2>
             <p>
                 Полянка - настоящая королева обнимашек! Она готова обнимать всех: друзей, родственников, 
@@ -341,16 +415,16 @@
                 рисует, смотрит аниме, общается в TikTok и создаёт контент для своих подписчиков. 
                 Айпад для неё - не просто устройство, а верный спутник и инструмент самовыражения.
             </p>
-        </sidebar>
+        </aside>
         
-        <article>
+        <article class="telegram-fix">
             <h1>Мир Полянки</h1>
             <p>
                 Полянка создала свой уникальный стиль, сочетающий удобство и эстетику айпадкидов. 
                 В её гардеробе преобладают уютные oversized-кофты, яркие аксессуары и носки с забавными принтами. 
                 Каждый её образ - это маленькое произведение искусства, отражающее внутренний мир.
             </p>
-            <img class="img_1" src="https://github.com/wgxnlf/polyana/blob/main/images/5271603517666229638.jpg?raw=true" alt="Котик">
+            <img class="img_1 telegram-fix" src="https://github.com/wgxnlf/polyana/blob/main/images/5271603517666229638.jpg?raw=true" alt="Котик">
             <p>
                 Друзья ценят Полянку за её неповторимое чувство юмора и способность поддержать в любой ситуации. 
                 Она мастерски создаёт уютную атмосферу, превращая обычные встречи в незабываемые моменты, 
@@ -363,46 +437,46 @@
                 реальных эмоций и теплых встреч. Её комната - это святилище, где технологии гармонично 
                 соседствуют с мягкими пледами, гирляндами и коллекцией плюшевых котов.
             </p>
-            <img class="img_4" src="https://github.com/wgxnlf/polyana/blob/main/images/5192905401677513531.jpg?raw=true" alt="Уютная комната">
-            <img class="img_5" src="https://github.com/wgxnlf/polyana/blob/main/images/5190595688524807561.jpg?raw=true" alt="Творчество">
+            <img class="img_4 telegram-fix" src="https://github.com/wgxnlf/polyana/blob/main/images/5192905401677513531.jpg?raw=true" alt="Уютная комната">
+            <img class="img_5 telegram-fix" src="https://github.com/wgxnlf/polyana/blob/main/images/5190595688524807561.jpg?raw=true" alt="Творчество">
         </article>
         
-        <sidebar class="second">
+        <aside class="second telegram-fix">
             <h2>Увлечения Полянки</h2>
             <p>
                 Творчество - вторая натура Полянки. Она создает цифровые рисунки, пишет стихи и ведет 
                 aesthetic-дневник. Её работы наполнены нежностью и вниманием к деталям, а каждая 
                 публикация в соцсетях собирает десятки восторженных комментариев.
             </p>
-            <img class="img_2" src="https://github.com/wgxnlf/polyana/blob/main/images/5406882463365591772.jpg?raw=true" alt="Творчество">
+            <img class="img_2 telegram-fix" src="https://github.com/wgxnlf/polyana/blob/main/images/5406882463365591772.jpg?raw=true" alt="Творчество">
             <h3>Любимые вещи</h3>
             <p>Розовый айпад с стикерпаком • Коллекция мягких игрушек • Аромасвечи с ванилью • 
             Фотоплёнка для моментальных снимков • Книга с кошачьими фактами</p>
-            <img class="img_3" src="https://github.com/wgxnlf/polyana/blob/main/images/5226437998063777320.jpg?raw=true" alt="Котик">
-        </sidebar>
+            <img class="img_3 telegram-fix" src="https://github.com/wgxnlf/polyana/blob/main/images/5226437998063777320.jpg?raw=true" alt="Котик">
+        </aside>
     </main>
     
-    <footer id="footer">
+    <footer id="footer" class="telegram-fix">
         <ul>
-            <li>
+            <li class="telegram-fix">
                 <h1>Обнимашки</h1>
                 Полянка установила личный рекорд - 47 обнимашек в день! Её объятия обладают 
                 терапевтическим эффектом: снимают стресс, повышают настроение и создают 
                 ощущение безопасности. Каждое её объятие - это маленькое путешествие в мир тепла и заботы.
             </li>
-            <li>
+            <li class="telegram-fix">
                 <h1>Кошачий эксперт</h1>
                 Полянка может отличить мейн-куна от норвежской лесной по одному взгляду на фото. 
                 Она знает все о кошачьем языке тела, привычках и предпочтениях. Мечтает изучить 
                 фелинологию и стать профессиональным "кошачьим психологом".
             </li>
-            <li>
+            <li class="telegram-fix">
                 <h1>Айпадкид философия</h1>
                 Для Полянки айпадкид - это про свободу самовыражения, цифровое искусство и 
                 создание комфортного пространства вокруг себя. Она считает, что технологии 
                 должны делать жизнь красивее и уютнее, а не холоднее и отстраненнее.
             </li>
-            <li>
+            <li class="telegram-fix">
                 <h1>Творческая душа</h1>
                 Вдохновение Полянка черпает в простых радостях: утреннем кофе, узорах на окне 
                 после дождя, мурлыкании кота и новых сериалах. Её творчество - это искренний 
