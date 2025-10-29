@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт Полянки</title>
+</head>
+<body id="body">
+
+    <style>
+                .header{
+            width: 100%;
+            height: 20%;
+            position: fixed;
+            margin-top: -40px;
+        }
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        body {
+            background-color: #f55791;;
+            font-family: Arial, sans-serif;
+        }
+        
+        nav li {
+            list-style: none;
+            display: inline-block;
+            width: 110px;
+            height: 35px;
+            padding-top: 15px;
+            margin-right: -5px;
+            text-align: center;
+            background-color: #e5068c;
+        }
+        
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav li:hover {
+            background-color: #be0f8c;
+        }
+        
+        nav {
+            background-color: #f55791;
+        }
+        
+        .led {
+            background-color: #da3d71;
+        }
+        
+        .first {
+            float: left;
+            text-align: justify;
+            width: 20%;
+            margin: 20px;
+            background-color: #f55791;
+            padding: 15px;
+            border-radius: 8px;
+            color: white
+        }
+        
+        .second {
+            width: 20%;
+            float: right;
+            text-align: justify;
+            margin: 20px;
+            background-color: #f55791;
+            padding: 15px;
+            border-radius: 8px;
+            color: white;
+        }
+        
+        article {
+            text-align: justify;
+            width: 60%;
+            margin-top: 20px;
+            background-color: #f55791;
+            padding: 20px;
+            border-radius: 8px;
+            color: white;   
+            overflow: hidden;
+        }
+        
+        #main {
+            display: flex;
+            background-color: rgb(209, 117, 146);
+            height: 200%;
+            margin-top: 40px;
+        }
+        
+        img {
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        
+        .img_1 {
+            width: 100%;
+            height: 50ch;
+            object-fit: cover;
+        }
+        
+        .img_2 {
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .img_3 {
+            width: 100%;
+            transform: scale(-1, 1);
+            object-fit: cover;
+        }
+        
+        .img_4 {
+              max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+        }
+        
+        .img_5 {
+              max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+        }
+        
+        h1, h2, h3 {
+            color: white;
+        }
+        
+        h3 {
+            text-align: center;
+        }
+        
+        .h {
+            margin-top: 20px;
+        }
+        
+        p {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        
+#footer {
+    margin-top: 40px;
+    width: 100%;
+    height: auto; 
+    text-align: center;
+    background-color: rgb(209, 117, 146);
+    display: block;
+    clear: both;
+    padding: 20px 0; 
+    box-sizing: border-box; 
+}
+
+footer ul {
+    width: 100%;
+    display: flex; 
+    justify-content: space-between; 
+    padding: 0 20px; 
+    box-sizing: border-box;
+}
+
+footer li {
+    list-style: none;
+    background-color: #f55791;
+    display: block; 
+    width: 23%; 
+    height: 300px;
+    padding: 15px; 
+    border-radius: 8px;
+    color: white;
+    box-sizing: border-box; 
+    margin: 0; 
+}
+
+cite {
+    color: white;
+    margin: 40px 0; 
+    padding: 20px;
+    display: block;
+}
+
+footer p {
+    margin-top: 40px;
+}
+    </style>
+    <header class="header">
+        <nav>
+            <ul>
+                <li class="led"><a href="#">Полянка</a></li>
+                <li><a href="#">О Полянке</a></li>
+                <li><a href="#">Факты</a></li>
+                <li><a href="#">Ещё факты</a></li>
+                <li><a href="#">Инста</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <sidebar class="first">
+            <h2>Интересные факты</h2>
+            <p>
+                Полянка - настоящая королева обнимашек! Она готова обнимать всех: друзей, родственников, 
+                и даже незнакомых котиков на улице. Её объятия обладают магической силой согревать душу 
+                и поднимать настроение даже в самый хмурый день.
+            </p>
+            <p>
+                У Полянки есть особая связь с котами. Она понимает их язык и знает, как подойти к самому 
+                стеснительному котику. В её телефоне полно фото и видео с котами, а мечта - открыть приют 
+                для бездомных животных.
+            </p>
+            <p>
+                Как истинная айпадкид, Полянка никогда не расстаётся со своим планшетом. На нём она 
+                рисует, смотрит аниме, общается в TikTok и создаёт контент для своих подписчиков. 
+                Айпад для неё - не просто устройство, а верный спутник и инструмент самовыражения.
+            </p>
+        </sidebar>
+        <article>
+            <h1>Мир Полянки</h1>
+            <p>
+                Полянка создала свой уникальный стиль, сочетающий удобство и эстетику айпадкидов. 
+                В её гардеробе преобладают уютные oversized-кофты, яркие аксессуары и носки с забавными принтами. 
+                Каждый её образ - это маленькое произведение искусства, отражающее внутренний мир.
+            </p>
+            <img class="img_1" src="https://github.com/wgxnlf/polyana/blob/main/images/5271603517666229638.jpg?raw=true" alt="Котик">
+            <p>
+                Друзья ценят Полянку за её неповторимое чувство юмора и способность поддержать в любой ситуации. 
+                Она мастерски создаёт уютную атмосферу, превращая обычные встречи в незабываемые моменты, 
+                наполненные смехом, глубокими разговорами и, конечно же, обнимашками.
+            </p>
+            <h1 class="h">Айпадкид стиль жизни</h1>
+            <p>
+                Для Полянки айпадкид - это не просто субкультура, а философия жизни. Она верит в силу 
+                цифрового творчества, ценит виртуальное общение, но никогда не забывает о важности 
+                реальных эмоций и теплых встреч. Её комната - это святилище, где технологии гармонично 
+                соседствуют с мягкими пледами, гирляндами и коллекцией плюшевых котов.
+            </p>
+            <img class="img_4" src="https://github.com/wgxnlf/polyana/blob/main/images/5192905401677513531.jpg?raw=true" alt="Уютная комната">
+            <img class="img_5" src="https://github.com/wgxnlf/polyana/blob/main/images/5190595688524807561.jpg?raw=true" alt="Творчество">
+        </article>
+        <sidebar class="second">
+            <h2>Увлечения Полянки</h2>
+            <p>
+                Творчество - вторая натура Полянки. Она создает цифровые рисунки, пишет стихи и ведет 
+                aesthetic-дневник. Её работы наполнены нежностью и вниманием к деталям, а каждая 
+                публикация в соцсетях собирает десятки восторженных комментариев.
+            </p>
+            <img class="img_2" src="https://github.com/wgxnlf/polyana/blob/main/images/5406882463365591772.jpg?raw=true" alt="Творчество">
+            <h3>Любимые вещи</h3>
+            <p>Розовый айпад с стикерпаком • Коллекция мягких игрушек • Аромасвечи с ванилью • 
+            Фотоплёнка для моментальных снимков • Книга с кошачьими фактами</p>
+            <img class="img_3" src="https://github.com/wgxnlf/polyana/blob/main/images/5226437998063777320.jpg?raw=true" alt="Котик">
+        </sidebar>
+    </main>
+    <footer id="footer">
+        <ul>
+            <li>
+                <h1>Обнимашки</h1>
+                Полянка установила личный рекорд - 47 обнимашек в день! Её объятия обладают 
+                терапевтическим эффектом: снимают стресс, повышают настроение и создают 
+                ощущение безопасности. Каждое её объятие - это маленькое путешествие в мир тепла и заботы.
+            </li>
+            <li>
+                <h1>Кошачий эксперт</h1>
+                Полянка может отличить мейн-куна от норвежской лесной по одному взгляду на фото. 
+                Она знает все о кошачьем языке тела, привычках и предпочтениях. Мечтает изучить 
+                фелинологию и стать профессиональным "кошачьим психологом".
+            </li>
+            <li>
+                <h1>Айпадкид философия</h1>
+                Для Полянки айпадкид - это про свободу самовыражения, цифровое искусство и 
+                создание комфортного пространства вокруг себя. Она считает, что технологии 
+                должны делать жизнь красивее и уютнее, а не холоднее и отстраненнее.
+            </li>
+            <li>
+                <h1>Творческая душа</h1>
+                Вдохновение Полянка черпает в простых радостях: утреннем кофе, узорах на окне 
+                после дождя, мурлыкании кота и новых сериалах. Её творчество - это искренний 
+                разговор с миром на языке красок, слов и эмоций.
+            </li>
+        </ul>
+        <p>
+            <cite>Полянка &reg; 2025. Мир обнимашек, котиков и мультиков</cite>
+        </p>
+    </footer>
+</body>
+</html>
